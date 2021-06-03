@@ -1,0 +1,96 @@
+<video autoplay muted loop id="myVideo">
+    <source src="../../../../assets/videos/fondo.mp4" type="video/mp4">
+</video>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-9 col-lg-7 col-xl-7 mx-auto">
+            <form action="" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validate();">
+                <h2 class="form-title">Crear tu cuenta</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputApodo" placeholder="Apodo..." required>
+                    <div class="invalid-feedback">
+                        <small>Tu Apodo no es válido.</small>
+                    </div>
+                </div>
+                <div class=" form-group">
+                    <input type="text" class="form-control" id="inputNombre" placeholder="Nombre..." required>
+                    <div class="invalid-feedback">
+                        <small>Tu Nombre no es válido.</small>
+                    </div>
+                </div>
+                <div class=" form-group">
+                    <input type="text" class="form-control" id="inputApellidos" placeholder="Apellidos..." required>
+                    <div class="invalid-feedback">
+                        <small>Tus Apellidos no son válidos.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Correo electrónico..." required>
+                    <div class="invalid-feedback">
+                        <small>Tu E-Mail no es válido.</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" onfocus="(this.type='date')" id="dt" class="form-control" min="1900-01-01" max="2100-12-31" placeholder="Fecha de nacimiento..." required>
+                    <div class="invalid-feedback">
+                        <small>La fecha no es válida.</small>
+                    </div>
+                </div>
+
+                <div class="form-group" id="idnac">
+                    <div class="row mx-0">
+                        <div class="col-3 pl-0" >
+                            <select id="selectID" class="form-control" style="height: 60px;">
+                                <option selected value="0">DNI</option>
+                                <option value="1">NIE</option>
+                            </select>
+                        </div>
+                        <div class="col-9 px-0">
+                            <input type="text" class="form-control" id="inputID" maxlength="9" placeholder="Documento de identidad..." required style="height: 60px;">
+                            <div class="invalid-feedback">
+                                <small>Tu documento de identidad no es válido.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" id="psw" placeholder="Contraseña..." required>
+                    <div class="invalid-feedback">
+                        <small>Tu contraseña no es válida.</small>
+                    </div>
+                </div>
+
+
+                <div class="form-group" id="message">
+                    <h6>La contraseña debe contener:</h6>
+                    <ul>
+                        <li id="pletter" class="invalid">Una letra minúscula.</li>
+                        <li id="pcapital" class="invalid">Una letra mayúsucula.</li>
+                        <li id="pnumber" class="invalid">Un número.</li>
+                        <li id="plength" class="invalid">Más de 8 caracteres.</li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" id="psw2" placeholder="Verifica tu contraseña..." required>             
+                    <div class="invalid-feedback">
+                        <small>La contraseña no coincide.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required>
+                    <label for="agree-term" class="label-agree-term"><span><span></span></span>Acepto todos los <a href="#" class="term-service">Términos y condiciones</a></label>
+                </div>
+
+                <button type="submit" name="submit" id="submit" class="form-submit">Registrarse</button>
+                <p class="loginhere">
+                    ¿Ya tienes tu cuenta creada? <a href="#" class="loginhere-link">Accede aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+</div>

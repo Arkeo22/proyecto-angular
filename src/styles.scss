@@ -3,3 +3,11 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap%27');
+
+body {
+    font-size: 14px;
+    line-height: 1.8;
+    color: black;
+    font-weight: 400;
+    font-family: 'Montserrat';
+}
