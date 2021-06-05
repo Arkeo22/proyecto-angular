@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistroComponent } from './componentes/auth/registro/registro.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from './servicios/user.service';
+import { HttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,10 +17,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   exports: [],
-  providers: [],
+  providers: [UserService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
