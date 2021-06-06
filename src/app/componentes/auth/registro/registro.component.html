@@ -1,10 +1,12 @@
+<!--
 <video autoplay muted loop id="myVideo">
     <source src="../../../../assets/videos/fondo.mp4" type="video/mp4">
 </video>
+-->
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-9 col-lg-7 col-xl-7 mx-auto">
-            <form [formGroup]="formRegistro" (submit)="evaluaForm()">
+            <form [formGroup]="formRegistro" (submit)="submit()">
                 <h2 class="form-title">Crear tu cuenta</h2>
                 <div class=" form-group">
                     <input formControlName="nombre" type="text" class="form-control" id="inputNombre" placeholder="Nombre...">
@@ -30,18 +32,18 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" id="psw2" placeholder="Verifica tu contraseña...">             
+                    <input formControlName="passwordValidate" type="password" class="form-control" id="psw2" placeholder="Verifica tu contraseña...">             
                 </div>
 
                 <div class="form-group">
-                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term">
+                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" formControlName="aceptarTerminos">
                     <label for="agree-term" class="label-agree-term"><span><span></span></span>Acepto todos los <a href="#" class="term-service">Términos y condiciones</a></label>
                 </div>
 
                 <button type="submit" name="submit" id="submit" class="form-submit">Registrarse</button>
 
                 <p class="loginhere">
-                    ¿Ya tienes tu cuenta creada? <a href="#" class="loginhere-link">Accede aquí</a>
+                    ¿Ya tienes tu cuenta creada? <a href="/login" class="loginhere-link">Accede aquí</a>
                 </p>
 
             </form>

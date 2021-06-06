@@ -1,0 +1,23 @@
+<!--
+<video autoplay muted loop id="myVideo">
+    <source src="../../../../assets/videos/fondo.mp4" type="video/mp4">
+</video>
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-9 col-lg-7 col-xl-7 mx-auto">
+            <form [formGroup]="formLogin" (submit)="evaluaForm()">
+                <h2 class="form-title">Iniciar Sesion</h2>
+                <div class="form-group">
+                    <input formControlName="email" type="text" class="form-control" id="inputEmail" placeholder="Correo electrónico...">
+                </div>
+
+                <div class="form-group">    
+                    <input formControlName="password" type="password" class="form-control" id="psw" placeholder="Contraseña...">
+                </div>
+
+                <button type="submit" name="submit" id="submit" class="form-submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</div>

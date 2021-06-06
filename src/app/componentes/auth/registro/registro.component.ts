@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
+import { UserService } from 'src/app/servicios/user.service';
 import { ConfirmedValidator, dniValido, telefonoValido } from 'src/app/validators/validaciones';
 
 
@@ -17,27 +18,32 @@ export class RegistroComponent implements OnInit {
     dni: new FormControl("", [Validators.required, dniValido()]),
     telefono: new FormControl("", [Validators.required, telefonoValido()]),
     password: new FormControl("", [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$')]),
-    passwordValidate: new FormControl("", [Validators.required])
+    passwordValidate: new FormControl("", [Validators.required]),
+    aceptarTerminos: new FormControl(false, [Validators.requiredTrue])
   }, {
-    validator: this.passwordMatchValidator
+    //validator: this.passwordMatchValidator 
   })
 
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
-  passwordMatchValidator(c: AbstractControl): ValidatorFn {
-    return (control: AbstractControl):{[key:string]:any} | null => {
-      return control.get("password") == control.get("passwordValidate") ? null : {control: "Las contraseñas no coinciden"}
-    }
-  } 
-
-  evaluaForm(): void{
-    console.log ("Evaluando formulario")
+  submit(): void{
     console.log(this.formRegistro.getRawValue())
-    if (this.formRegistro.valid && ) console.log ("El formulario es correcto")
-    else console.log("Lo que has introducido no vale ná")
+    if (this.formRegistro.valid && this.formRegistro.get("password")?.value == this.formRegistro.get("passwordValidate")?.value){
+      this.userService.registrar(this.formRegistro.value).subscribe(
+        respuesta =>{
+          console.log(respuesta)
+          this.userService.guardarToken(respuesta)
+          //this.irHacia.navigate(['/perfil'])
+        },
+        error => console.log(error)
+      )
+    }
+    else{
+      console.log("Lo que has introducido no vale ná")
+    }
   }
 }
