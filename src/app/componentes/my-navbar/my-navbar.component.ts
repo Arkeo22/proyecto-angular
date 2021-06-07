@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/servicios/user.service';
+import { faHome, faUser, faUserShield, faCamera } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-my-navbar',
@@ -8,6 +9,10 @@ import { UserService } from 'src/app/servicios/user.service';
   styleUrls: ['./my-navbar.component.scss']
 })
 export class MyNavbarComponent implements OnInit {
+
+  faHome = faHome
+  faUser = faUser
+  faUserShield = faUserShield
 
   constructor(private userService: UserService, private router: Router) { }
 

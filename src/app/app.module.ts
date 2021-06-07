@@ -14,6 +14,7 @@ import { ProfileComponent } from './componentes/profile/profile.component';
 import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
 import { EnviarTokenInterceptor } from './interceptors/enviar-token.interceptor';
 import { HomeComponent } from './componentes/home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './componentes/home/home.component';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   exports: [],
   providers: [

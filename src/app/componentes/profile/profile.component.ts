@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/clases/user';
 import { UserService } from 'src/app/servicios/user.service';
+import { faCamera, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-profile',
@@ -15,6 +16,8 @@ export class ProfileComponent implements OnInit {
   email = ''
   telefono = ''
   dni = ''
+  faCamera = faCamera
+  faEdit = faEdit
 
   constructor(private userService: UserService, private router: Router) {
     this.cargarPerfil();

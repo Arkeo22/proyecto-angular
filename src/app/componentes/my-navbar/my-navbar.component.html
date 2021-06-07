@@ -9,26 +9,48 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="/home">Inicio<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/home">
+            <fa-icon [icon]="faHome"></fa-icon>
+            Inicio<span class="sr-only">(current)</span></a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/profile">Perfil</a>
         </li>
+        
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Administracion</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+            <fa-icon [icon]="faUserShield"></fa-icon>
+            Administracion</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <div *ngIf="!isLogged(); then unloggedBlock else loggedBlock">
-          
         </div>
+
         <ng-template #unloggedBlock>
           <button class="btn btn-outline-warning my-2 mx-2 my-sm-0" type="button" onclick="location.href='/register'">Registro</button>
           <button class="btn btn-outline-success my-2 mx-2 my-sm-0" type="button" onclick="location.href='/login'">Iniciar sesión</button>
         </ng-template>
         <ng-template #loggedBlock>
-          <button class="btn btn-outline-error my-2 mx-2 my-sm-0" type="button" (click)="signOut()">Cerrar sesión</button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">      
+              <li class="nav-item dropdown">
+                
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <fa-icon [icon]="faUser"></fa-icon>
+                  Perfil        
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">My perfil</a></li>
+                  <li><a class="dropdown-item" href="#" type="button" (click)="signOut()" >Cerrar sesión</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </ng-template>
       </form>
     </div>
   </nav>
+
+     
