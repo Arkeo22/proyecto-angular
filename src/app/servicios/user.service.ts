@@ -6,6 +6,7 @@ const url = 'http://localhost/backendphp/user/'
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
   constructor(private http:HttpClient) { }

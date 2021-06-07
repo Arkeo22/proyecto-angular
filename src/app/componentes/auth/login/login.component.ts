@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/servicios/user.service';
 import { ConfirmedValidator} from 'src/app/validators/validaciones';
 
 @Component({
@@ -14,16 +16,20 @@ export class LoginComponent implements OnInit {
     password: new FormControl ("", [Validators.required]) 
   })
 
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  evaluaForm(): void{
-    console.log ("Evaluando formulario")
-    console.log(this.formLogin.getRawValue())
-    if (this.formLogin.valid) console.log ("El formulario es correcto")
-    else console.log("Lo que has introducido no vale ná")
+  submit(): void{
+    this.userService.acceso(this.formLogin.value).subscribe(
+      respuesta => {
+        this.userService.guardarToken(respuesta)
+        this.router.navigateByUrl("/profile")
+      }
+
+    )
   }
+    
 
 }

@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-9 col-lg-7 col-xl-7 mx-auto">
-            <form [formGroup]="formLogin" (submit)="evaluaForm()">
+            <form [formGroup]="formLogin" (submit)="submit()">
                 <h2 class="form-title">Iniciar Sesion</h2>
                 <div class="form-group">
                     <input formControlName="email" type="text" class="form-control" id="inputEmail" placeholder="Correo electrónico...">
@@ -16,7 +16,7 @@
                     <input formControlName="password" type="password" class="form-control" id="psw" placeholder="Contraseña...">
                 </div>
 
-                <button type="submit" name="submit" id="submit" class="form-submit">Registrarse</button>
+                <button type="submit" name="submit" id="submit" class="form-submit">Iniciar sesión</button>
             </form>
         </div>
     </div>

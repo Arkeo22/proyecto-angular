@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/servicios/user.service';
 import { ConfirmedValidator, dniValido, telefonoValido } from 'src/app/validators/validaciones';
 
@@ -25,19 +26,17 @@ export class RegistroComponent implements OnInit {
   })
 
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   submit(): void{
-    console.log(this.formRegistro.getRawValue())
     if (this.formRegistro.valid && this.formRegistro.get("password")?.value == this.formRegistro.get("passwordValidate")?.value){
       this.userService.registrar(this.formRegistro.value).subscribe(
         respuesta =>{
-          console.log(respuesta)
           this.userService.guardarToken(respuesta)
-          //this.irHacia.navigate(['/perfil'])
+          this.router.navigateByUrl('/perfil')
         },
         error => console.log(error)
       )
