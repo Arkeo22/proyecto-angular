@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/clases/user';
 import { UserService } from 'src/app/servicios/user.service';
 import { faCamera, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { dniValido, telefonoValido } from 'src/app/validators/validaciones';
 
 @Component({
   selector: 'app-profile',
@@ -11,31 +13,57 @@ import { faCamera, faEdit } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProfileComponent implements OnInit {
 
-  nombre = ''
-  apellidos = ''
-  email = ''
-  telefono = ''
-  dni = ''
+  isEditing: boolean = false;
+  perfil: User = {}
+  formPerfil= this.fb.group({
+    nombre:[''],
+    apellidos:[''],
+    password:['', [Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$')]],
+    confirmPassword:[''],
+    dni: ['', [Validators.required, dniValido()]],
+    email:['', [Validators.required, Validators.email]],
+    telefono:[undefined,[telefonoValido()]],
+  })
+
   faCamera = faCamera
   faEdit = faEdit
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.cargarPerfil();
   }
 
   private cargarPerfil(): void {
     this.userService.obtenerPerfil().subscribe(
       respuesta => {
-          this.nombre = respuesta["nombre"]
-          this.apellidos = respuesta["apellidos"]
-          this.email = respuesta["email"]
-          this.telefono = respuesta["telefono"]
-          this.dni = respuesta["dni"]
-      }
+        console.log(respuesta)
+        this.perfil = respuesta
+        this.formPerfil.patchValue(respuesta)
+      },
+      error => console.log(error)
     )
   }
 
   ngOnInit(): void {
   }
 
+  editOrSave(): void {
+    if (!this.isEditing){
+      this.isEditing = true;
+      return;
+    }
+
+    if (this.formPerfil.valid && (this.formPerfil.get("password")?.value == this.formPerfil.get("confirmPassword")?.value || this.formPerfil.get("password")?.value == "")){
+      this.userService.editarPerfil(this.formPerfil.value).subscribe(
+        respuesta => {
+          console.log(respuesta)
+          this.cargarPerfil();
+          this.isEditing = false;
+        },
+        error => console.log(error)
+      )
+    }
+    else{
+      console.log("Lo que has introducido no vale ná")
+    }
+  }
 }

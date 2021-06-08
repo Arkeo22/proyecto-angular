@@ -36,7 +36,7 @@ export class RegistroComponent implements OnInit {
       this.userService.registrar(this.formRegistro.value).subscribe(
         respuesta =>{
           this.userService.guardarToken(respuesta)
-          this.router.navigateByUrl('/perfil')
+          this.router.navigateByUrl('/profile')
         },
         error => console.log(error)
       )

@@ -15,40 +15,52 @@
                                   
                                     </div>
                                   </a> </div>
-                                <h6 class="f-w-600 m-b-20">{{ nombre }} {{ apellidos }}</h6>
-                                <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='/edit-profile'">Editar Perfil</button>
+                                <h6 class="f-w-600 m-b-20">{{ perfil.nombre }} {{ perfil.apellidos }}</h6>
                             </div>
                         </div>
-                        <div class="col-sm-8">
+                        <form [formGroup]="formPerfil"  class="col-sm-8">
                             <div class="card-block">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">Nombre</p>
-                                        <h6 class="text-muted f-w-400">{{ nombre }} <fa-icon [icon]="faEdit" id="icoEdit"></fa-icon></h6>
+                                        <h6 *ngIf='!isEditing' class="text-muted f-w-400">{{ perfil.nombre }}</h6>
+                                        <input *ngIf='isEditing' class="form-control" type="text" formControlName="nombre">
                                     </div>
                                     <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">Apellidos</p>
-                                        <h6 class="text-muted f-w-400">{{ apellidos }} <fa-icon [icon]="faEdit" id="icoEdit"></fa-icon></h6>
+                                        <h6 *ngIf='!isEditing' class="text-muted f-w-400">{{ perfil.apellidos }}</h6>
+                                        <input *ngIf='isEditing' class="form-control" type="text" formControlName="apellidos">
                                     </div>                                  
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">Telefono</p>
-                                        <h6 class="text-muted f-w-400">{{ telefono }} <fa-icon [icon]="faEdit" id="icoEdit"></fa-icon></h6>
+                                        <h6 *ngIf='!isEditing' class="text-muted f-w-400">{{ perfil.telefono }}</h6>
+                                        <input *ngIf='isEditing' class="form-control" type="text" formControlName="telefono">
                                     </div>
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-6">
                                         <p class="m-b-10 f-w-600">DNI</p>
-                                        <h6 class="text-muted f-w-400">{{ dni }}<fa-icon [icon]="faEdit" id="icoEdit"></fa-icon></h6>
+                                        <h6 *ngIf="!isEditing" class="text-muted f-w-400">{{ perfil.dni }}</h6>
+                                        <input *ngIf='isEditing' class="form-control" type="text" formControlName="dni">
                                     </div>
                                     <div class="col-sm-12">
                                         <p class="m-b-10 f-w-600">E-mail</p>
-                                        <h6 class="text-muted f-w-400">{{ email }}<fa-icon [icon]="faEdit" id="icoEdit"></fa-icon></h6>
+                                        <h6 *ngIf="!isEditing" class="text-muted f-w-400">{{ perfil.email }}</h6>
+                                        <input *ngIf='isEditing' class="form-control" type="text" formControlName="email">
                                     </div>
-                                    <div class="col-sm-12">
-                                        <p class="m-b-10 f-w-600">Password</p>
-                                        <h6 class="text-muted f-w-400">contaseñaaaaa<fa-icon [icon]="faEdit" id="icoEdit"></fa-icon></h6>
+                                    <div *ngIf="isEditing" class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Contraseña</p>
+                                        <input class="form-control" type="password" formControlName="password">
+                                    </div>
+                                    <div *ngIf="isEditing" class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Confirmar contraseña</p>
+                                        <input class="form-control" type="password" formControlName="confirmPassword">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="submit" (click)="editOrSave()">{{(isEditing ? "Guardar cambios" : "Editar perfil")}}</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+                        
                     </div>
                 </div>
             </div>

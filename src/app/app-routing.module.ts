@@ -7,7 +7,7 @@ import { EditProfileComponent } from './componentes/edit-profile/edit-profile.co
 import { HomeComponent } from './componentes/home/home.component';
 
 const routes: Routes = [
-  { path: "", component: RegistroComponent, pathMatch: "full"},
+  { path: "", component: HomeComponent, pathMatch: "full"},
   { path: "register", component: RegistroComponent, pathMatch: "full"},
   { path: "login", component: LoginComponent, pathMatch: "full"},
   { path: "profile", component: ProfileComponent, pathMatch: "full"},
