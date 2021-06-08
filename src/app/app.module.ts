@@ -15,6 +15,8 @@ import { EditProfileComponent } from './componentes/edit-profile/edit-profile.co
 import { EnviarTokenInterceptor } from './interceptors/enviar-token.interceptor';
 import { HomeComponent } from './componentes/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminService } from './servicios/admin-service.service';
+import { AdminComponent } from './componentes/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MyNavbarComponent,
     ProfileComponent,
     EditProfileComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   exports: [],
   providers: [
     UserService,
+    AdminService,
     {provide: HTTP_INTERCEPTORS, useClass: EnviarTokenInterceptor, multi:true}],
   bootstrap: [AppComponent]
 })

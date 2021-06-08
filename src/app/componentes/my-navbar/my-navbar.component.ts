@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/servicios/user.service';
 import { faHome, faUser, faUserShield, faCamera } from '@fortawesome/free-solid-svg-icons';
+import { AdminService } from 'src/app/servicios/admin-service.service';
 
 @Component({
   selector: 'app-my-navbar',
@@ -14,7 +15,7 @@ export class MyNavbarComponent implements OnInit {
   faUser = faUser
   faUserShield = faUserShield
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private adminService: AdminService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,5 +27,9 @@ export class MyNavbarComponent implements OnInit {
   signOut(): void {
     this.userService.logOut();
     this.router.navigateByUrl("/login");
+  }
+
+  isAdmin(): boolean {
+    return this.adminService.isAdmin();
   }
 }

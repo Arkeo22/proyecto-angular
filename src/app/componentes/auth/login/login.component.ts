@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControlOptions, AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/servicios/user.service';
-import { ConfirmedValidator} from 'src/app/validators/validaciones';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +15,11 @@ export class LoginComponent implements OnInit {
     password: new FormControl ("", [Validators.required]) 
   })
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) {
+    if (this.userService.isLogged()){
+      this.router.navigateByUrl("/profile")
+    }
+  }
 
   ngOnInit(): void {
   }

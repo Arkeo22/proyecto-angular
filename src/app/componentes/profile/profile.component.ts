@@ -23,10 +23,10 @@ export class ProfileComponent implements OnInit {
     dni: ['', [Validators.required, dniValido()]],
     email:['', [Validators.required, Validators.email]],
     telefono:[undefined,[telefonoValido()]],
+    imagen:['']
   })
 
   faCamera = faCamera
-  faEdit = faEdit
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.cargarPerfil();
@@ -65,5 +65,16 @@ export class ProfileComponent implements OnInit {
     else{
       console.log("Lo que has introducido no vale ná")
     }
+  }
+
+  deleteUser(): void{
+    this.userService.eliminarUsuario().subscribe(
+      respuesta => {
+        console.log(respuesta)
+        this.userService.logOut()
+        this.router.navigateByUrl('/login')
+      },
+      error => console.log(error)
+    )
   }
 }

@@ -1,0 +1,26 @@
+<div style="width: 80%;" class="mx-auto mt-5">
+    <table class="table table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">ID rol</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Email</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td scope="col">{{ user.id }}</td>
+                <td scope="col">{{ user.idRol }}</td>
+                <td scope="col">{{ user.nombre }}</td>
+                <td scope="col">{{ user.apellidos }}</td>
+                <td scope="col">{{ user.email }}</td>
+                <td scope="col">
+                    <button type="button">Eliminar usuario</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

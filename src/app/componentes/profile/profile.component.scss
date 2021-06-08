@@ -18,6 +18,7 @@ body {
 	background-position: center;
 	background-blend-mode: multiply;
 	color: transparent;
+	cursor: pointer;
 	transition: all .3s ease;
 	text-decoration: none!important;
 	@include object-center;
@@ -174,6 +175,14 @@ h6 {
 	transition: all 0.3s ease-in-out
 }
 
-.icoEdit {
-	float: right;
+#upload_link{
+    text-decoration:none;
+}
+#upload{
+    display:none
+}
+
+.user-action-buttons-container {
+	display: flex;
+	justify-content: space-evenly
 }

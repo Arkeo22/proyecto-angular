@@ -26,7 +26,11 @@ export class RegistroComponent implements OnInit {
   })
 
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) {
+    if (this.userService.isLogged()){
+      this.router.navigateByUrl("/profile")
+    }
+  }
 
   ngOnInit(): void {
   }

@@ -1,5 +1,6 @@
 export interface User {
     id?: number
+    idRol?: number
     nombre?: string
     apellidos?: string
     password?: string
