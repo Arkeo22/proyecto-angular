@@ -31,7 +31,7 @@ export class UserService {
     return this.http.delete(url)
   }
 
-  subirImagen(entrada:string): Observable<any>{
+  subirImagen(entrada: FormData): Observable<any>{
    return this.http.post(url+'image/', entrada) 
   }
   

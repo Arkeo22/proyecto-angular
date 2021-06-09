@@ -7,12 +7,12 @@
                         <div class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
                                 <div class="m-b-25">
-                                    <input id="upload" type="file"/>
-                                    <div class="profile-pic mx-auto" style="background-image: url('https://pbs.twimg.com/profile_images/1068860223341936641/LjYi5b30_400x400.jpg')" >    
-                                        <fa-icon [icon]="faCamera"></fa-icon>
-                                        <span>Cambiar Imagen</span>
-                                  
-                                    </div>
+                                    <form>
+                                        <div class="profile-pic mx-auto" [ngStyle]="{'background-image': getProfileImg()}" >    
+                                            <label for="upload"><fa-icon [icon]="faCamera"></fa-icon>Cambiar Imagen</label>
+                                            <input id="upload" name="upload" type="file" (change)='tengoFoto($event)'/>
+                                        </div>
+                                    </form>
                                 </div>
                                 <h6 class="f-w-600 m-b-20">{{ perfil.nombre }} {{ perfil.apellidos }}</h6>
                             </div>

@@ -23,9 +23,10 @@ export class ProfileComponent implements OnInit {
     dni: ['', [Validators.required, dniValido()]],
     email:['', [Validators.required, Validators.email]],
     telefono:[undefined,[telefonoValido()]],
-    imagen:['']
+    imgSrc:['']
   })
 
+  foto: File = {} as File
   faCamera = faCamera
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
@@ -76,5 +77,29 @@ export class ProfileComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  tengoFoto(evento: any): void{
+    if(evento.target.files){
+      this.foto = evento.target.files[0];
+      this.subirFoto();
+    }
+  }
+
+  subirFoto(): void{
+    const formData = new FormData()
+    formData.append('imagen', this.foto)
+    this.userService.subirImagen(formData).subscribe(
+      respuesta => {
+        console.log(respuesta)
+        this.cargarPerfil()
+      },
+      error => {console.log(error)}
+    )
+  }
+
+  getProfileImg(): string{
+    console.log(this.formPerfil.get('imgSrc')?.value == null ? '../../../assets/imgs/peeposumito.png' : this.formPerfil.get('imgSrc')?.value)
+    return this.formPerfil.get('imgSrc')?.value == null ? 'url(../../../assets/imgs/peeposumito.png)' : `url(${this.formPerfil.get('imgSrc')?.value})`;
   }
 }

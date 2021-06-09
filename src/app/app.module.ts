@@ -18,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminService } from './servicios/admin-service.service';
 import { AdminComponent } from './componentes/admin/admin.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { AboutusComponent } from './componentes/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     EditProfileComponent,
     HomeComponent,
     AdminComponent,
-    FooterComponent
+    FooterComponent,
+    AboutusComponent
     
   ],
   imports: [

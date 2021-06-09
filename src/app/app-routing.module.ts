@@ -6,6 +6,7 @@ import { ProfileComponent } from './componentes/profile/profile.component';
 import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { AdminComponent } from './componentes/admin/admin.component';
+import { AboutusComponent } from './componentes/aboutus/aboutus.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full"},
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: "profile", component: ProfileComponent, pathMatch: "full"},
   { path: "edit-profile", component: EditProfileComponent, pathMatch: "full"},
   { path: "home", component: HomeComponent, pathMatch: "full"},
-  { path: "admin", component: AdminComponent, pathMatch: "full"}
+  { path: "admin", component: AdminComponent, pathMatch: "full"},
+  { path: "aboutus", component: AboutusComponent, pathMatch: "full"}
 ];
 
 @NgModule({
