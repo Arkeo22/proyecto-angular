@@ -11,7 +11,6 @@ import { LoginComponent } from './componentes/auth/login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyNavbarComponent } from './componentes/my-navbar/my-navbar.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
-import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
 import { EnviarTokenInterceptor } from './interceptors/enviar-token.interceptor';
 import { HomeComponent } from './componentes/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,7 +26,6 @@ import { AboutusComponent } from './componentes/aboutus/aboutus.component';
     LoginComponent,
     MyNavbarComponent,
     ProfileComponent,
-    EditProfileComponent,
     HomeComponent,
     AdminComponent,
     FooterComponent,
