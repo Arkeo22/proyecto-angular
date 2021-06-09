@@ -2,194 +2,193 @@
   Icons
  ================= */
 
- *{
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* footer social icons */
-  
-  footer {
-    background-size: 120%;
-      background-image: url(https://stuartfamilydental.com/wp-content/uploads/2018/02/insurance-footer-background.png);
-      padding: 20px 0 0 0;
-      text-align: center;
-  }
-  
-  ul {
-      list-style: none;
-      display: inline;
-      margin: auto;
-    
-    li{
-      display: inline;
-      margin: 0 10px;
-    }
-  }
-  
-  /* footer social icons */
-  
-  #facebook {
-    background-color: #3b589850;
-    }
+ * {
+	margin: 0;
+	padding: 0;
+}
 
-  #twitch {
-      background-color: #6441a550;
-    }
 
-  #twitter {
-      background-color: #00abee56;
-    }
+/* footer social icons */
 
-  #youtube {
-      background-color: #c4302b5b;
-    }
+footer {
+	background-size: 120%;
+	background-image: url(https://stuartfamilydental.com/wp-content/uploads/2018/02/insurance-footer-background.png);
+	padding: 20px 0 0 0;
+	text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
-  #instagram {
-      background: #f0953354;
-    }
+ul {
+	list-style: none;
+	display: inline;
+	margin: auto;
+	li {
+		display: inline;
+		margin: 0 10px;
+	}
+}
 
-  #linkedin {
-      background-color: #0e77a84d;
-    }
 
-  #google:hover {
-      background-color: #db4a39;
-    }
+/* footer social icons */
 
-    #facebook:hover {
-      background-color: #3b5998;
-      }
+#facebook {
+	background-color: #3b589850;
+}
 
-    #twitch:hover {
-        background-color: #6441a5;
-      }
+#twitch {
+	background-color: #6441a550;
+}
 
-    #twitter:hover {
-        background-color: #00acee;
-      }
+#twitter {
+	background-color: #00abee56;
+}
 
-    #youtube:hover {
-        background-color: #c4302b;
-      }
+#youtube {
+	background-color: #c4302b5b;
+}
 
-    #instagram:hover {
-        background: #f09433;
-        background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
-      }
+#instagram {
+	background: #f0953354;
+}
 
-    #linkedin:hover {
-        background-color: #0e76a8;
-      }
+#linkedin {
+	background-color: #0e77a84d;
+}
 
-    #google:hover {
-        background-color: #db4a39;
-      }
- 
+#google:hover {
+	background-color: #db4a39;
+}
 
-  a:hover i{
-      color: #fff;
-  }
-  
-  li a {
-      display: inline-block;
-      position: relative;
-      margin: 0 auto 0 auto;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-      border-radius: 50%;
-      text-align: center;
-      width: 60px;
-      height: 60px;
-      font-size: 22px;
-  }
-  
-  li i {
-      margin: 0;
-      line-height: 60px;
-      text-align: center;
-  }
-  
-  li a:hover i, .triggeredHover {
-      -moz-transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
-      -ms--transform: rotate(360deg);
-      transform: rotate(360deg);
-      -webkit-transition: all 0.8s;
-      -moz-transition: all 0.8s;
-      -o-transition: all 0.8s;
-      -ms-transition: all 0.8s;
-      transition: all 0.8s;
-  }
-  
-    i {
-      color: #fff;
-      -webkit-transition: all 0.8s;
-      -moz-transition: all 0.8s;
-      -o-transition: all 0.8s;
-      -ms-transition: all 0.8s;
-      transition: all 0.8s;
-  }
-  
- 
+#facebook:hover {
+	background-color: #3b5998;
+}
 
-  
-  @media screen and (max-width: 500px) {
-      ul li {
-          display: inline;
-          margin: 0 5px;
-      }
-  }
-  
-  @media screen and (max-width: 450px) {
-      ul li {
-          display: inline;
-          margin: 0 5px;
-      }
-      li a {
-          display: inline-block;
-          position: relative;
-          margin: 0 auto 0 auto;
-          -moz-border-radius: 50%;
-          -webkit-border-radius: 50%;
-          border-radius: 50%;
-          text-align: center;
-          width: 40px;
-          height: 40px;
-          font-size: 16px;
-      }
-      li i {
-          margin: 0;
-          line-height: 40px;
-          text-align: center;
-      }
-  }
-  
-  @media screen and (max-width: 350px) {
-      ul li {
-          display: inline;
-          margin: 0 2px;
-      }
-      li a {
-          display: inline-block;
-          position: relative;
-          margin: 0 auto 0 auto;
-          -moz-border-radius: 50%;
-          -webkit-border-radius: 50%;
-          border-radius: 50%;
-          text-align: center;
-          width: 40px;
-          height: 40px;
-          font-size: 16px;
-      }
-      li i {
-          margin: 0;
-          line-height: 40px;
-          text-align: center;
-      }
-  }
-  
-  
+#twitch:hover {
+	background-color: #6441a5;
+}
+
+#twitter:hover {
+	background-color: #00acee;
+}
+
+#youtube:hover {
+	background-color: #c4302b;
+}
+
+#instagram:hover {
+	background: #f09433;
+	background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+	background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+	background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+#linkedin:hover {
+	background-color: #0e76a8;
+}
+
+#google:hover {
+	background-color: #db4a39;
+}
+
+a:hover i {
+	color: #fff;
+}
+
+li a {
+	display: inline-block;
+	position: relative;
+	margin: 0 auto 0 auto;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	text-align: center;
+	width: 60px;
+	height: 60px;
+	font-size: 22px;
+}
+
+li i {
+	margin: 0;
+	line-height: 60px;
+	text-align: center;
+}
+
+li a:hover i,
+.triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+@media screen and (max-width: 500px) {
+	ul li {
+		display: inline;
+		margin: 0 5px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	ul li {
+		display: inline;
+		margin: 0 5px;
+	}
+	li a {
+		display: inline-block;
+		position: relative;
+		margin: 0 auto 0 auto;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		text-align: center;
+		width: 40px;
+		height: 40px;
+		font-size: 16px;
+	}
+	li i {
+		margin: 0;
+		line-height: 40px;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	ul li {
+		display: inline;
+		margin: 0 2px;
+	}
+	li a {
+		display: inline-block;
+		position: relative;
+		margin: 0 auto 0 auto;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		text-align: center;
+		width: 40px;
+		height: 40px;
+		font-size: 16px;
+	}
+	li i {
+		margin: 0;
+		line-height: 40px;
+		text-align: center;
+	}
+}

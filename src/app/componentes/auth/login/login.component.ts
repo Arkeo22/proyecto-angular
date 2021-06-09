@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/servicios/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -29,8 +30,8 @@ export class LoginComponent implements OnInit {
       respuesta => {
         this.userService.guardarToken(respuesta)
         this.router.navigateByUrl("/profile")
-      }
-
+      },
+      error => Swal.fire('Ooops...', error.error.error, 'error')
     )
   }
     

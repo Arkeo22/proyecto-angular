@@ -5,6 +5,7 @@ import { UserService } from 'src/app/servicios/user.service';
 import { faCamera, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { dniValido, telefonoValido } from 'src/app/validators/validaciones';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile',
@@ -40,7 +41,7 @@ export class ProfileComponent implements OnInit {
         this.perfil = respuesta
         this.formPerfil.patchValue(respuesta)
       },
-      error => console.log(error)
+      error => Swal.fire('Ooops...', error.error.error, 'error')
     )
   }
 
@@ -60,7 +61,7 @@ export class ProfileComponent implements OnInit {
           this.cargarPerfil();
           this.isEditing = false;
         },
-        error => console.log(error)
+        error => Swal.fire('Ooops...', error.error.error, 'error')
       )
     }
     else{
@@ -75,7 +76,7 @@ export class ProfileComponent implements OnInit {
         this.userService.logOut()
         this.router.navigateByUrl('/login')
       },
-      error => console.log(error)
+      error => Swal.fire('Ooops...', error.error.error, 'error')
     )
   }
 
@@ -94,7 +95,7 @@ export class ProfileComponent implements OnInit {
         console.log(respuesta)
         this.cargarPerfil()
       },
-      error => {console.log(error)}
+      error => Swal.fire('Ooops...', error.error.error, 'error')
     )
   }
 

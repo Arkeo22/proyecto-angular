@@ -3,6 +3,7 @@ import { AbstractControlOptions, AbstractControl, FormBuilder, FormControl, Form
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/servicios/user.service';
 import { ConfirmedValidator, dniValido, telefonoValido } from 'src/app/validators/validaciones';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -42,7 +43,7 @@ export class RegistroComponent implements OnInit {
           this.userService.guardarToken(respuesta)
           this.router.navigateByUrl('/profile')
         },
-        error => console.log(error)
+        error => Swal.fire('Ooops...', error.error.error, 'error')
       )
     }
     else{
