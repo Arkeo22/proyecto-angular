@@ -54,10 +54,10 @@
                                         <input class="form-control" type="password" formControlName="confirmPassword">
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" (click)="editOrSave()">{{(isEditing ? "Guardar cambios" : "Editar perfil")}}</button>
+                                        <button type="submit" (click)="editOrSave()" class="btn btn-outline-primary btn-sm btn-block m-b-10 f-w-600 " >{{(isEditing ? "Guardar cambios" : "Editar perfil")}}</button>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" (click)="deleteUser()">Borrar usuario</button>
+                                        <button type="submit" (click)="deleteUser()" class="btn btn-outline-danger btn-sm btn-block m-b-10 f-w-600" >Borrar usuario</button>
                                     </div>
                                 </div>
                             </div>

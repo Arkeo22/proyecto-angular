@@ -105,8 +105,22 @@ h6 {
 @media only screen and (min-width: 1400px) {
 	p {
 		font-size: 14px
-	}
+	}	
 }
+
+@media (max-width: 768px) { 
+	.profile-pic{
+		height: 100px;
+		width: 100px;
+	}
+ }
+
+ @media (max-width: 576px) {
+	.profile-pic{
+		height: 150px;
+		width: 150px;
+	}
+ }
 
 .card-block {
 	padding: 1.25rem
@@ -186,3 +200,4 @@ h6 {
 	display: flex;
 	justify-content: space-evenly
 }
+

@@ -1,0 +1,28 @@
+th, td {
+    text-align: center;
+}
+
+.padding {
+	padding: 3rem !important;
+    display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+
+.col-sm-6,
+.col-sm-12 {
+	margin-bottom: 20px;
+}
+
+.m-r-0 {
+	margin-right: 0px
+}
+
+.m-l-0 {
+	margin-left: 0px
+}
+
+.m-b-10 {
+	margin-bottom: 10px
+}

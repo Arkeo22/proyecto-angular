@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/servicios/user.service';
-import { faHome, faUser, faUserShield, faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import { AdminService } from 'src/app/servicios/admin-service.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class MyNavbarComponent implements OnInit {
   faHome = faHome
   faUser = faUser
   faUserShield = faUserShield
+  public isCollapsed = false;
 
   constructor(private userService: UserService, private adminService: AdminService,private router: Router) { }
 
