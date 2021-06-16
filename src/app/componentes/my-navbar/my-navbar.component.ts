@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/servicios/user.service';
-import { faHome, faUser, faUserShield } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faUserShield, faUsers, } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { AdminService } from 'src/app/servicios/admin-service.service';
 
 @Component({
@@ -10,9 +11,11 @@ import { AdminService } from 'src/app/servicios/admin-service.service';
   styleUrls: ['./my-navbar.component.scss']
 })
 export class MyNavbarComponent implements OnInit {
-
+  
+  faSignOutAlt = faSignOutAlt
   faHome = faHome
   faUser = faUser
+  faUsers = faUsers
   faUserShield = faUserShield
   public isCollapsed = false;
 

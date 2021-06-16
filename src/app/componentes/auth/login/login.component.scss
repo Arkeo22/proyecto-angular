@@ -1,12 +1,5 @@
 /* Estilo de cuerpo, container, formulario y titulos */
 
-body {
-	font-size: 14px;
-	line-height: 1.8;
-	color: black;
-	font-weight: 400;
-	font-family: 'Montserrat';
-}
 
 .container {
 	margin: 0 auto;
@@ -37,7 +30,7 @@ h2 {
 /* Estilo de los input y sus cajas */
 
 .form-group {
-	overflow: hidden;
+
 	margin-bottom: 20px;
 }
 
@@ -51,41 +44,6 @@ h2 {
 	font-size: 13px;
 	font-weight: 500;
 	color: #222;
-}
-
-
-/* Padding del cuadro de seleccion de documento para que cuadre mejor en diferentes resoluciones */
-
-#selectID {
-	padding: 18px 20px;
-}
-
-@media screen and (max-width: 767px) {
-	#selectID {
-		padding: 0px 0px;
-	}
-}
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-	#selectID {
-		padding: 9px 10px;
-	}
-}
-
-
-/* Estilo de la checkbox y los terminos */
-
-input[type=checkbox] {
-	display: inline-block;
-	margin-top: 7px;
-	margin-bottom: 25px;
-}
-
-.label-agree-term {
-	margin-left: 6px;
-	font-size: 14px;
-	font-weight: 600;
-	color: #555;
 }
 
 
@@ -104,39 +62,19 @@ input[type=checkbox] {
 	background-image: linear-gradient(to left, #0cdaf5, #1ee0ca);
 }
 
-
-/* Estilo para el login */
-
-.loginhere {
-	font-weight: 500;
-	text-align: center;
-	margin-top: 90px;
-	margin-bottom: 5px;
-	font-size: 14px;
-	color: #777;
-}
-
-
-/* Cuadro de mensaje de la contraseña */
-
-#message {
-	display: none;
-	color: darkblue;
-	background-color: rgb(201, 240, 255);
-	position: relative;
-	padding: 10px 20px;
-	margin-top: 10px;
-	border: 1px solid transparent;
-	border-radius: 10px;
+.form-submit:disabled,
+.form-submit[disabled]{
+	width: 100%;
+	border-radius: 5px;
+	padding: 17px 20px;
 	box-sizing: border-box;
-	font-size: 13px;
-	font-weight: 500;
+	font-size: 14px;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	background-image: linear-gradient(to left, #0cdaf552, #1ee0c950);
 }
-
-#message li {
-	list-style-type: none;
-}
-
 
 /* Tamaño de fuente mas pequeño en los avisos de feedback */
 
@@ -145,38 +83,6 @@ small {
 }
 
 
-/* Texto en verde y checkmark al validar el cuadro */
-
-.valid {
-	color: green;
-}
-
-.valid:before {
-	position: relative;
-	left: -35px;
-	content: "\2713";
-}
 
 
-/* Texto rojo y "x" para los cuadros no validos */
 
-.invalid {
-	color: red;
-}
-
-.invalid:before {
-	position: relative;
-	left: -35px;
-	content: "\292B";
-}
-
-
-/* Estilo del video para que ocupe el 100% de la pantalla del dispositivo */
-
-#myVideo {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	min-width: 100%;
-	min-height: 100%;
-}

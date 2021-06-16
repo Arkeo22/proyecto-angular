@@ -21,9 +21,8 @@ body {
 	background-position: center;
 	background-blend-mode: multiply;
 	color: transparent;
-	cursor: pointer;
 	transition: all .3s ease;
-	text-decoration: none!important;
+
 	@include object-center;
 	&:hover {
 		background-color: rgba(0, 0, 0, .5);
@@ -192,11 +191,8 @@ h6 {
 	transition: all 0.3s ease-in-out
 }
 
-#upload_link{
-    text-decoration:none;
-}
 #upload{
-    display:none
+    display:none;
 }
 
 .user-action-buttons-container {

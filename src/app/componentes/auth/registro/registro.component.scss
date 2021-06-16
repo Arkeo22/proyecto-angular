@@ -34,7 +34,6 @@ h2 {
 
 /* Estilo de los input y sus cajas */
 .form-group {
-    overflow: hidden;
     margin-bottom: 20px;
 }
 
@@ -48,23 +47,6 @@ h2 {
     font-size: 13px;
     font-weight: 500;
     color: #222;
-}
-
-/* Padding del cuadro de seleccion de documento para que cuadre mejor en diferentes resoluciones */
-#selectID {
-    padding: 18px 20px;
-}
-
-@media screen and (max-width: 767px) {
-    #selectID {
-        padding: 0px 0px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-    #selectID {
-        padding: 9px 10px;
-    }
 }
 
 /* Estilo de la checkbox y los terminos */
@@ -95,6 +77,20 @@ input[type=checkbox] {
     background-image: linear-gradient(to left, #0cdaf5, #1ee0ca);
 }
 
+.form-submit:disabled,
+.form-submit[disabled]{
+	width: 100%;
+	border-radius: 5px;
+	padding: 17px 20px;
+	box-sizing: border-box;
+	font-size: 14px;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	background-image: linear-gradient(to left, #0cdaf552, #1ee0c950);
+}
+
 /* Estilo para el login */
 .loginhere {
     font-weight: 500;
@@ -107,7 +103,6 @@ input[type=checkbox] {
 
 /* Cuadro de mensaje de la contraseña */
 #message {
-    display: none;
     color: darkblue;
     background-color: rgb(201, 240, 255);
     position: relative;
@@ -140,7 +135,9 @@ small {
     content: "\2713";
 }
 
-
+ul {
+    list-style: none;
+}
 /* Texto rojo y "x" para los cuadros no validos */
 .invalid {
     color: red;
@@ -149,14 +146,6 @@ small {
 .invalid:before {
     position: relative;
     left: -35px;
-    content: "\292B";
+    content: "\292B"!important;
 }
 
-/* Estilo del video para que ocupe el 100% de la pantalla del dispositivo */
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}

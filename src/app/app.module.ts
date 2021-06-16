@@ -19,6 +19,7 @@ import { AdminComponent } from './componentes/admin/admin.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { AboutusComponent } from './componentes/aboutus/aboutus.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { AboutusComponent } from './componentes/aboutus/aboutus.component';
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule
+
   ],
   exports: [],
   providers: [

@@ -50,4 +50,24 @@ export class RegistroComponent implements OnInit {
       console.log("Lo que has introducido no vale ná")
     }
   }
+
+  passwordHasLower(): boolean {
+    var str = this.formRegistro.get('password')?.value
+    return str.toUpperCase() != str;  
+  }
+
+  passwordHasUpper(): boolean {
+    var str = this.formRegistro.get('password')?.value
+    return str.toLowerCase() != str;  
+  }
+
+  passwordHasNumber(): boolean {
+    var str = this.formRegistro.get('password')?.value
+    return /\d/.test(str);
+  }
+
+  passwordHasLength(): boolean {
+    var str = this.formRegistro.get('password')?.value
+    return str.length >= 8;  
+  }
 }

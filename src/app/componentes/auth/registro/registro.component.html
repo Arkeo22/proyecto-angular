@@ -10,6 +10,8 @@
                 <h2 class="form-title">Crear tu cuenta</h2>
                 <div class=" form-group">
                     <input formControlName="nombre" type="text" class="form-control" id="inputNombre" placeholder="Nombre...">
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
                 <div class=" form-group">
                     <input formControlName="apellidos" type="text" class="form-control" id="inputApellidos" placeholder="Apellidos...">
@@ -31,13 +33,13 @@
                     <input formControlName="password" type="password" class="form-control" id="psw" placeholder="Contraseña...">
                 </div>
           
-                <div class="form-group">
+                <div class="form-group" id="message">
                     <h6>La contraseña debe contener:</h6>
                     <ul>
-                        <li id="pletter" class="invalid">Una letra minúscula.</li>
-                        <li id="pcapital" class="valid">Una letra mayúsucula.</li>
-                        <li id="pnumber" class="valid">Un número.</li>
-                        <li id="plength" class="valid">Más de 8 caracteres.</li>
+                        <li id="pletter" class="{{ passwordHasLower() ? 'valid' : 'invalid' }}">Una letra minúscula.</li>
+                        <li id="pcapital" class="{{ passwordHasUpper() ? 'valid' : 'invalid' }}">Una letra mayúscula.</li>
+                        <li id="pnumber" class="{{ passwordHasNumber() ? 'valid' : 'invalid' }}">Un número.</li>
+                        <li id="plength" class="{{ passwordHasLength() ? 'valid' : 'invalid' }}">Más de 8 caracteres.</li>
                     </ul>
                 </div>
 
@@ -50,7 +52,7 @@
                     <label for="agree-term" class="label-agree-term"><span><span></span></span>Acepto todos los <a href="#" class="term-service">Términos y condiciones</a></label>
                 </div>
 
-                <button type="submit" name="submit" id="submit" class="form-submit">Registrarse</button>
+                <button type="submit" name="submit" id="submit" class="form-submit" [disabled]="!formRegistro.valid">Registrarse</button>
 
                 <p class="loginhere">
                     ¿Ya tienes tu cuenta creada? <a href="/login" class="loginhere-link">Accede aquí</a>

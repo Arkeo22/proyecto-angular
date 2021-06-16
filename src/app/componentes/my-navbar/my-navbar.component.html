@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="my-navbar">
     <button class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarToggler">
       <span class="navbar-toggler-icon"></span>
@@ -8,14 +9,20 @@
   
     <div class="collapse navbar-collapse" id="navbarToggler" [ngbCollapse]="!isCollapsed">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" [routerLink]="['/home']">
             <fa-icon [icon]="faHome"></fa-icon>
-            Inicio<span class="sr-only">(current)</span></a>
+            Inicio<span class="sr-only"></span></a>
         </li>
         
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/aboutus']" tabindex="-1" aria-disabled="true">
+            <fa-icon [icon]="faUsers"></fa-icon>
+            About Us</a>
+        </li>
+
         <li *ngIf="isAdmin()" class="nav-item">
-          <a class="nav-link" [routerLink]="['/admin']" tabindex="-1" aria-disabled="true">
+          <a class="nav-link" [routerLink]="['/admin']" tabindex="-2" aria-disabled="true" id="adminrojo">
             <fa-icon [icon]="faUserShield"></fa-icon>
             Administracion</a>
         </li>
@@ -34,12 +41,11 @@
               <fa-icon [icon]="faUser"></fa-icon>
               Mi Perfil</button>
             <div ngbDropdownMenu  style="margin-left: -15px; margin-top: 5px;" aria-labelledby="dropdownManual">
-              <button ngbDropdownItem (click)="signOut()" [routerLink]="['.']">Cerrar sesion</button>
-              <button ngbDropdownItem [routerLink]="['/profile']">Mi perfil</button>
+              <button ngbDropdownItem (click)="signOut()" [routerLink]="['.']"><fa-icon [icon]="faSignOutAlt"></fa-icon>  Cerrar sesion</button>
+              <button ngbDropdownItem [routerLink]="['/profile']"><fa-icon [icon]="faUser"></fa-icon>  Mi perfil</button>
             </div>
           </div>
         </ng-template>
       </form>
     </div>
   </nav>
-     
